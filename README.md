@@ -1,2 +1,2 @@
 # conan-xgboost
-XGBoost Conan recipe (shared lib, CPU only)
+[XGBoost](https://github.com/dmlc/xgboost) [Conan](https://conan.io/) recipe (shared lib, CPU only)
