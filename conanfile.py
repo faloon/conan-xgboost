@@ -17,13 +17,6 @@ class XGBoostConan(ConanFile):
     
     default_options = { "cuda": False}
     
-## CUDA
-#option(USE_CUDA  "Build with GPU acceleration" OFF)
-#option(USE_NCCL  "Build with NCCL to enable distributed GPU support." OFF)
-#option(BUILD_WITH_SHARED_NCCL "Build with shared NCCL library." OFF)
-#option(BUILD_WITH_CUDA_CUB "Build with cub in CUDA installation" OFF)
-#set(GPU_COMPUTE_VER "" CACHE STRING
- # "Semicolon separated list of compute versions to be built against, e.g. '35;61'")
 
 
     def source(self):
@@ -61,16 +54,12 @@ class XGBoostConan(ConanFile):
 
 
 
-    def package_info(self):         
+    def package_info(self):   
         self.cpp_info.libs = ["xgboost", "dmlc"]        
-        if platform.system() == "Windows":
+        if platform.system() == "Windows": #MINGW users be aware
            self.cpp_info.libs.append("objxgboost")  
 
-        
-            
-#libdmlc.so  librabit.so  libxgboost.so
-#    def cmake_option_bool(self, name, cmake_name):
-#        return "-D%s=%s" % (cmake_name, ("ON" if getattr(self.options, name) else "OFF"))
+                    
 
 
 
