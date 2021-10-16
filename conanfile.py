@@ -28,7 +28,8 @@ class XGBoostConan(ConanFile):
         return "OFF"
 
     def build(self):        
-        cmake = CMake(self)             
+        cmake = CMake(self)     
+        #hard-coded to keep it simple. Will add more definitions and CUDA support eventually
         cmake.definitions["ADD_PKGCONFIG"] = "OFF"        
         cmake.definitions["BUILD_STATIC_LIB"] = "OFF"         
         cmake.definitions["USE_OPENMPI"] = "ON"
