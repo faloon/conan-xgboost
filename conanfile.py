@@ -11,13 +11,7 @@ class XGBoostConan(ConanFile):
     description = "XGBoost eXtreme Gradient Boosting"    
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
-    options = {
-    "cuda": [True,False],    
-    }
-    
-    default_options = { "cuda": False}
-    
-
+        
 
     def source(self):
         self.run("git clone --recursive --branch %s %s" % (self.version, self.repo))        
